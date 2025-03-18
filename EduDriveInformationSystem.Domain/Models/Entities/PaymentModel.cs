@@ -1,6 +1,7 @@
 ﻿namespace EduDriveInformationSystem.Domain.Models.Entities
 {
-    public class PotentialModel
+    public class PaymentModel
     {
+
     }
 }
