@@ -1,0 +1,6 @@
+@EduDriveInformationSystem.Domain_HostAddress = http://localhost:5070
+
+GET {{EduDriveInformationSystem.Domain_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
