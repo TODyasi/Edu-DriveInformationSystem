@@ -18,31 +18,34 @@ namespace EduDriveInformationSystem.Domain.Data
        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            var adminUserId = Guid.Parse("f0a1b207-763c-4e4a-a12b-d76d41dce45f");
+            var instructorUserId = Guid.Parse("23301fc1-ef6e-467f-92fe-16301953a784");
+            var salesAgentUserId = Guid.Parse("7eaef12d-b8d9-473b-8309-2f4b8c44fae4");
 
             modelBuilder.Entity<UserModel>().HasData(
             new UserModel
             {
-                UserId = Guid.NewGuid(),
+                UserId = adminUserId,
                 UserFirstName = "John",
                 UserLastName = "Doe",
                 UserEmail = "admin@drivingschool.com",
                 UserContactNumber = "+27 123 456 789",
-                UserPassword = "hashedPasswordHere", // Replace with actual hashed password
+                UserPassword = "hashedPasswordHere", 
                 UserRole = UserRoles.Admin
             },
             new UserModel
             {
-                UserId = Guid.NewGuid(),
+                UserId = instructorUserId,
                 UserFirstName = "Jane",
                 UserLastName = "Smith",
                 UserEmail = "instructor@drivingschool.com",
                 UserContactNumber = "+27 987 654 321",
-                UserPassword = "hashedPasswordHere", // Replace with actual hashed password
+                UserPassword = "hashedPasswordHere",
                 UserRole = UserRoles.Instructor
             },
             new UserModel
             {
-                UserId = Guid.NewGuid(),
+                UserId = salesAgentUserId,
                 UserFirstName = "Sarah",
                 UserLastName = "Johnson",
                 UserEmail = "sales@drivingschool.com",
