@@ -15,6 +15,7 @@ namespace EduDriveInformationSystem.Domain.Data
         // Define the DbSets for CRM Entities
         public DbSet<UserModel> Users { get; set; }
         public DbSet<ClientModel> Clients { get; set; }
+        public DbSet<DrivingLessonModel> drivingLessons { get; set; }
 
        protected override void OnModelCreating(ModelBuilder modelBuilder)
        {
@@ -89,6 +90,27 @@ namespace EduDriveInformationSystem.Domain.Data
                    ClientPhoneNumber = "0217654321",
                    ClientEmergencyContact = "Jane Doe - 0217654321",
                    ClientStatus = 0
+               }
+
+           );
+            modelBuilder.Entity<DrivingLessonModel>().HasData(
+               new DrivingLessonModel
+               {
+                   LessonId = 12345,
+                   LessonDate = new DateTime(2025, 3, 20),
+                   LessonDuration = TimeSpan.FromHours(1),
+                   LessonType = "Driving",
+                   LessonNotes = "Initial lesson. Focus on basic control.",
+                   LessonStatus = "Pending",
+               },
+               new DrivingLessonModel
+               {
+                   LessonId = 7464657,  // Use the GUID of an existing client Use the GUID of an existing instructor
+                   LessonDate = new DateTime(2025, 3, 20),
+                   LessonDuration = TimeSpan.FromHours(1),
+                   LessonType = "Driving",
+                   LessonNotes = "Intermediate lesson. Practice parking.",
+                   LessonStatus = "Pending"
                }
            );
         }

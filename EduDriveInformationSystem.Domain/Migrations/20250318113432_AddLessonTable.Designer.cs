@@ -4,6 +4,7 @@ using EduDriveInformationSystem.Domain.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduDriveInformationSystem.Domain.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250318113432_AddLessonTable")]
+    partial class AddLessonTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -140,7 +143,7 @@ namespace EduDriveInformationSystem.Domain.Migrations
                         {
                             LessonId = 12345,
                             InstructorId = new Guid("00000000-0000-0000-0000-000000000000"),
-                            LessonDate = new DateTime(2025, 3, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LessonDate = new DateTime(2025, 3, 19, 11, 34, 31, 327, DateTimeKind.Local).AddTicks(5606),
                             LessonDuration = new TimeSpan(0, 1, 0, 0, 0),
                             LessonNotes = "Initial lesson. Focus on basic control.",
                             LessonStatus = "Pending",
